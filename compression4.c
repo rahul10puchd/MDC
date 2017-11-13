@@ -4,9 +4,9 @@
 #include"prototype.h"
 int compression4(char *m,char *str,int l)
 {
-		char encr1[]=".encr";
+	char encr1[]=".encr";
 	
-	char *encr;
+	char* encr;
 	
 	encr=malloc(strlen(str) + strlen(encr1) + 1);
 	
@@ -35,7 +35,7 @@ int compression4(char *m,char *str,int l)
 
 
 	fd2 = open(str,O_RDONLY);
-	fd4 = open(encr,O_RDWR | O_CREAT);
+	fd4 = open(encr,O_WRONLY | O_CREAT);
 
 	while(1)
 	{
