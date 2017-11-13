@@ -4,10 +4,21 @@
 int decompression4(char *open_encr,char *open_key,char *str)
 {
 
+char decr1[]=".decompressed";
+	
+	char *decr;
+	
+	decr=malloc(strlen(str) + strlen(decr1) + 1);
+	
+
+    strcpy(decr, str);
+    strcat(decr, decr1);
+    printf("decompressed file name is---> %s\n",decr);
+
 //	printf("in function----->%s\n",__func__);
 	unsigned char *buff=NULL,ch,c,d;
 	unsigned int efd,fd2,fd3,i=0,count,count1,length,j,n,r;
-	efd=open("compression",O_RDONLY);
+	efd=open(open_key,O_RDONLY);
 //	printf("efd is : %d\n",efd);
 	count=lseek(efd,0,SEEK_END);
 //	printf("count is : %d\n",count);
@@ -15,10 +26,10 @@ int decompression4(char *open_encr,char *open_key,char *str)
 	lseek(efd,0,SEEK_SET);
 	count1=read(efd,buff,(count));
 //	printf("master array is : %s\n and count1: %d\n",buff,count1);
-	fd2=open("encrypted_file",O_RDONLY);
+	fd2=open(open_encr,O_RDONLY);
 	if(fd2!=0)
 	printf("ENCRYPTED FILE IS OPENED\n");
-	fd3=open("compressed_file",O_RDWR);
+	fd3=open(decr,O_RDWR);
 	if(fd3!=0)
 	{
 		printf("main file is opened\n");
