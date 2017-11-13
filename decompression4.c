@@ -8,7 +8,7 @@ char decr1[]=".decompressed";
 	
 	char *decr;
 	
-	decr=malloc(strlen(str) + strlen(decr1) + 1);
+	decr=malloc(strlen(str) + strlen(decr1) + 10);
 	
 
     strcpy(decr, str);
