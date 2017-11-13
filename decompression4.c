@@ -29,7 +29,7 @@ char decr1[]=".decompressed";
 	fd2=open(open_encr,O_RDONLY);
 	if(fd2!=0)
 	printf("ENCRYPTED FILE IS OPENED\n");
-	fd3=open(decr,O_RDWR);
+	fd3=open(decr,O_RDWR | O_CREAT);
 	if(fd3!=0)
 	{
 		printf("main file is opened\n");
