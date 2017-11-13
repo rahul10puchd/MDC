@@ -35,7 +35,7 @@ int compression4(char *m,char *str,int l)
 
 
 	fd2 = open(str,O_RDONLY);
-	fd4 = open("encrypted_file",O_RDWR | O_CREAT);
+	fd4 = open(encr,O_WRONLY | O_CREAT);
 
 	while(1)
 	{
