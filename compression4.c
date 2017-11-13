@@ -1,12 +1,12 @@
+
 //this is compression  of 4 byte
 #include"header.h"
 #include"prototype.h"
 int compression4(char *m,char *str,int l)
 {
-
-	char encr1[]=".encr";
+		char encr1[]=".encr";
 	
-	char* encr;
+	char *encr;
 	
 	encr=malloc(strlen(str) + strlen(encr1) + 1);
 	
