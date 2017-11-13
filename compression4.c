@@ -28,14 +28,14 @@ int compression4(char *m,char *str,int l)
 		perror("malloc");
 		exit(EXIT_FAILURE);
 	}
-printf("in function ------> %s\n", __func__);
+	printf("in function ------> %s\n", __func__);
 	printf("the master arraay is -----> %s\n",m);
 	printf("the final legth of masterarray is---------------------->%d\n",l);
-        preserve_masterarray(m,l, str);	
+        preserve_masterarray(m,l,str);	
 
 
 	fd2 = open(str,O_RDONLY);
-	fd4 = open(encr,O_WRONLY | O_CREAT);
+	fd4 = open(encr,O_RDWR | O_CREAT);
 
 	while(1)
 	{
@@ -59,18 +59,17 @@ printf("in function ------> %s\n", __func__);
 
 		w = write(fd4,&byte,1);
 		if(w!=1)
-//		printf("CHARACTER IS NOT WRITTEN\n");
+		printf("CHARACTER IS NOT WRITTEN\n");
 		if( eof == 0)
 		break;
 	}
-//	printf("fd2-----> %d\n fd4-------->%d\n",fd2,fd4);
+	printf("fd2-----> %d\n fd4-------->%d\n",fd2,fd4);
 
 	lseek(fd4,0,SEEK_SET);
 	read(fd4,buff,l);
-//	printf("the encryption code is -------->%s\n",buff);
+	printf("the encryption code is -------->%s\n",buff);
 	close(fd2);
 	close(fd4);
-	printf("\n.\n..\n...\n.....\n........Encrypted file is generated using 4-Bit Compression named %s\n",encr);
 	return 0;
 }
 
