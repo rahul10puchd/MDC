@@ -1,4 +1,6 @@
 #!/bin/bash
+rm -rf *.o
+rm -rf mdc
 clear
 for var in `ls *.h` `ls *.c`
 do
@@ -22,10 +24,7 @@ then
 
 	else
 		echo "thankyou!!"
-	fi
-	
-		rm *.o
-		rm mdc 
+	fi 
 	
 
 fi
