@@ -4,7 +4,7 @@
 int compression7(char *m,int l,char *str)
 {
 
-	char encr1[]=".encrypted";
+	char encr1[]=".encr";
 	
 	char* encr;
 	
